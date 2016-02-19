@@ -9,6 +9,7 @@
         <property name="message" value="user"/>
     </bean>
 
+
     <bean id="printer2" class="lab2.practice.MessagePrinter">
         <property name="message" value="password"/>
     </bean>

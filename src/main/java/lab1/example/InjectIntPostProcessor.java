@@ -12,7 +12,7 @@ public class InjectIntPostProcessor implements BeanPostProcessor {
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         Class clazz = bean.getClass();
         for (Field field : clazz.getDeclaredFields()) {
-            InjectInt annotation = field.getDeclaredAnnotation(InjectInt.class);
+            InjectInt annotation = field.getAnnotation(InjectInt.class);
             if (annotation != null) {
                 Integer newValue = IntServiceLocator.get(annotation.value());
                 field.setAccessible(true);

@@ -2,13 +2,14 @@ package lab1.practice;
 
 
 public class MessagePrinter implements Printer {
+
     private String message;
 
-    // создать аннотацию и аннотировать поле так, что бы при поднятии контекста
-    // в поле инжектилось случайное число от 0 до числа заданого при помощи аннотации
+    @InjectRandomInt(10)
     private int count;
 
     public void print() {
+        System.out.println(count);
         for (int i = 0; i < count; i++) {
             System.out.println(message);
         }
